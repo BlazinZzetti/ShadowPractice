@@ -1,0 +1,54 @@
+//Inject address: 8016F154
+//Registers
+//r0  = Location of the meter value to be set.
+//r31 = Address location for the variable being set with r0.
+
+//Registers used with new code
+//r15 = Result of checking the address in r31.
+//r16 = value to check if the value being set is for the hero meter.
+//r17 = value to check if the value being set is for the dark meter.
+
+//Original code at inject address.
+//Takes the value in r0 and applies it to value at r31 
+stw r0, 0 (r31)
+
+//Prepare r16 and r17 with the values needed to check which variable is being updated.
+li r16, 0x66C8 
+li r17, 0x66D4
+
+//AND r31 with r16 and store the result in r15
+and r15,r31,r16
+
+//If r15 is the same as r16, the address is confirmed to be for the hero meter.
+//branch to the section of code that handles applying the meter value to the hero score.
+cmpwi r15,0x66C8
+beq HERO
+
+//If the above fails, then we can check if the address is for the dark meter.
+//AND r31 with r17 and store the result in r15
+and r15,r31,r17
+
+//If r15 is the same as r17, the address is confirmed to be for the dark meter.
+//branch to the section of code that handles applying the meter value to the dark score.
+cmpwi r15,0x66D4
+beq DARK
+
+//The address stored in r31 is not for either meter somehow. Nothing left to do.
+b END
+
+//Handles applying the value stored in r0 to the Hero Score variable.
+HERO:
+stw r0, 0x004c (r31)
+b END
+
+//Handles applying the value stored in r0 to the Dark Score variable.
+DARK:
+stw r0, 0x0044 (r31)
+b END
+
+//Clean up used registers before returning to original code.
+//These registers were all 0 when we enter the new code, so setting them back to 0 should leave no trace that they were used.
+END:
+li r15, 0
+li r16, 0
+li r17, 0
