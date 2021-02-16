@@ -20,9 +20,9 @@ Z + L + R = Empty Both Meters
 
 Z + DPad Up = Enter Stage's Expert Mode from Stage Select
 
-Z + DPad Right = Enter The Last Way (Select Final Haunt or it will crash)
+Z + DPad Down = Enter The Last Way (Select Final Haunt or it will crash)
 
-Z + DPad Down = Enter The Last Way Expert (Select Final Haunt or it will crash)
+Z + DPad Right = Enter The Last Way Expert (Select Final Haunt or it will crash)
 
 The following are activated when you are in the option menu and the selection for the sound test is selecting the noted song.
 
