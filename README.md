@@ -31,7 +31,7 @@ The following are activated when you are in the option menu and the selection fo
 | Unlock Last Story | I Am |
 | Unlock Expert Mode | Almost Dead |
 | All Cutscene Viewed | Waking Up |
-| All Stages and Bosses Selectable (Not working yet) | Chosen One |
+| All Stages and Bosses Selectable | Chosen One |
 | Unlock All Special Weapons | All Hail Shadow |
 | Unlock All Keys | Never Turn Back |
 | No Special Weapons | Westopolis |

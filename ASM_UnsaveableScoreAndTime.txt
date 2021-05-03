@@ -26,8 +26,18 @@ or r18,r16,r17
 
 //Load r19 (0) into 
 stw r19, 0(r18)//Normal Score
-stw r19, 4(r18)//Hero Score
-stw r19, 8(r18)//Dark Score
+
+//Load first half of variables we will be modifing 
+lis r16, 0x8057
+//Load last half of Hero Meter Value
+li r17, 0x66C8
+
+//Prepare to modify Meter Values
+or r18,r16,r17
+
+//Load r19 (0) into 
+stw r19, 0(r18)//Hero Meter Value
+stw r19, C(r18)//Dark Meter Value
 
 //Prepare to modify Timer
 lis r18, 0xD734
