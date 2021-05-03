@@ -23,12 +23,12 @@ Enter Expert Stage with Z + Dpad Up
 0057D7C5 00000001
 E2000001 80008000
 
-Enter Last Way with Z + Dpad Right
+Enter Last Way with Z + Dpad Down
 2856ED4E 000000A0
 0457D748 000002BC
 E2000001 80008000
 
-Enter Expert Last Way with Z + Dpad Down
+Enter Expert Last Way with Z + Dpad Right
 2856ED4E 00000220
 0457D748 000002BC
 0057D7C5 00000001
