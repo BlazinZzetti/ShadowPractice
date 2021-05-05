@@ -37,7 +37,7 @@ or r18,r16,r17
 
 //Load r19 (0) into 
 stw r19, 0(r18)//Hero Meter Value
-stw r19, C(r18)//Dark Meter Value
+stw r19, 12(r18)//Dark Meter Value
 
 //Prepare to modify Timer
 lis r18, 0xD734
