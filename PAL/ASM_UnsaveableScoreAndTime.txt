@@ -1,0 +1,55 @@
+//Inject address: 80205ed8
+//Registers used with new code
+//r15 = Value of 99:59:99 for Timer
+//r16 = First half of address for variables being modified.
+//r17 = Second half of address for variables being modified.
+//r18 = Full address for variables being modified.
+//r19 = First for setting r15, then 0.
+
+//Original code at inject address.
+stwu sp, -0x0010 (sp)
+
+//Load max time (in Word) into register r15
+lis r15, 0x45bb
+li r19, 0x80
+slwi r19, r19, 8
+or r15, r15, r19
+li r19, 0x0
+
+//Load first half of variables we will be modifing 
+lis r16, 0x8057
+//Load last half of Normal Score
+li r17, 0x77D0 
+
+//Prepare to modify Scores
+or r18,r16,r17
+
+//Load r19 (0) into 
+stw r19, 0(r18)//Normal Score
+
+//Load first half of variables we will be modifing 
+lis r16, 0x8057
+//Load last half of Hero Meter Value
+li r17, 0x7788
+
+//Prepare to modify Meter Values
+or r18,r16,r17
+
+//Load r19 (0) into 
+stw r19, 0(r18)//Hero Meter Value
+stw r19, 12(r18)//Dark Meter Value
+
+//Prepare to modify Timer
+lis r18, 0xE7F4
+srwi r18, r18, 16
+or r18,r16,r18
+
+//Load max time into Timer
+stw r15, 0(r18)
+
+//Clean up used registers before returning to original code.
+//These registers were all 0 when we enter the new code, so setting them back to 0 should leave no trace that they were used.
+li r15, 0
+li r16, 0
+li r17, 0
+li r18, 0
