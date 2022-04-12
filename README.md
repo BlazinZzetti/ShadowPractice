@@ -52,3 +52,32 @@ The following are activated when you are in the option menu and the selection fo
 | Set Vacuum Egg to LV 2 | The ARK |
 | Set Omochao Gun to LV 2 | Air Fleet |
 | Set Heal Cannon to LV 2 | Iron Jungle |
+
+## How to use it
+
+### On a Wii via Nintendont...
+----
+#### ...with a physical disc
+1. Copy the gct file to `[SD or USB]:\codes\`
+#### ...without a physical disc
+1. Copy the gct file to `[SD or USB]:\games\Shadow The Hedgehog [GUPE8P]\` (same folder as game.iso)
+----
+2. If you don't have Nintendont, get it here https://github.com/FIX94/Nintendont
+3. In Nintendont, hover over "Boot GC Disc in Drive [DISC01]" and press B to open settings
+4. Set Cheats On
+
+Nintendont will **not** provide a 1:1 performance match to running in GameCube mode.
+
+The game will have higher fps and loading will be faster.
+
+Consider using Swiss or other GameCube mode homebrew to have a closer experience to the original
+
+### On a PC via Dolphin
+1. If you don't have Dolphin, get the latest beta or dev version here https://dolphin-emu.org/download/
+2. In Dolphin, open Config, then check Enable Cheats
+3. Right click Shadow the Hedgehog and click Properties
+4. Click `Gecko Codes` tab
+5. Click `Add New Code...`
+6. Reference GUP*.txt or DolphinFormattedCodes.txt to add the `Practice Codes [Zzetti]` code then click `Save`
+7. You should see the new code in the `Gecko Codes` list, ensure it is checked
+
